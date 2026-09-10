@@ -25,9 +25,9 @@ This isn't a slide deck dressed up as code. Everything in it is checkable:
    - **Solver B (BDH-CQ-style):** represents the grid as a fixed-size latent vector and applies the rule as a single direct operation on that state — no verbalized trace.
    - Both solvers' answers are verified correct **before** any cost is computed.
 4. **An auditable, shared cost model** — every constant is labeled:
-   - 🟦 **DERIVED** — computed from a stated, standard transformer-inference formula
-   - 🟨 **ASSUMPTION** — an editable parameter (hardware throughput, $/GPU-hour, fixed call overhead); change it and the numbers change accordingly
-   - 🟩 **CITED** — taken directly from Pathway's published ARC-AGI-1 results, not computed by this notebook
+   - **DERIVED** — computed from a stated, standard transformer-inference formula
+   - **ASSUMPTION** — an editable parameter (hardware throughput, $/GPU-hour, fixed call overhead); change it and the numbers change accordingly
+   - **CITED** — taken directly from Pathway's published ARC-AGI-1 results, not computed by this notebook
 
    The same formula and assumptions are applied to *both* solvers, so any gap in the results comes from the shape of the work (growing token trace vs. fixed-size state update), not from a friendlier constant chosen for one side.
 5. **A scaling sweep** across grid sizes, re-verifying correctness at every size before plotting cost/latency.
